@@ -1,0 +1,70 @@
+/* Basic styling */
+body {
+  font-family: Arial, sans-serif;
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #bedde7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#app {
+  background-color: white;
+  border-radius: 1rem;
+  min-width: 700px;
+  max-width: 450px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  overflow: hidden;
+}
+
+#box-container {
+  border: 1px solid rgb(212, 205, 205);
+  padding: 1rem;
+  margin: .5rem;
+  border-radius: .6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+.box {
+  width: 9rem;
+  height: 9rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+
+}
+
+.box:hover {
+  background-color: rgb(174, 240, 240);
+  transform: rotateY(180deg);
+  transition: all .2s;
+}
+
+.table {
+  flex-direction: column;
+  display: flex;
+  gap: 1rem;
+}
+
+.table .row {
+  display: flex;
+  width: '100%';
+  gap: 1rem;
+
+}
