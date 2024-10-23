@@ -6,6 +6,7 @@ let boxesArray = Array.from({ length: 4 }, (_, rowIndex) => {
         const newDiv = document.createElement('div');
         newDiv.innerHTML = `${rowIndex * 4 + colIndex}`; // Display the index in a grid format
         newDiv.classList.add("box");
+        newDiv.setAttribute("card-number", rowIndex);
         return newDiv;
     });
 });
@@ -14,7 +15,11 @@ let boxesArray = Array.from({ length: 4 }, (_, rowIndex) => {
 const renderTable = () => {
     return boxesArray.map((row, rowIndex) => {
         return `<div class="row">` + 
-            row.map((div) => div.outerHTML).join('') + 
+            row.map((div, index) =>`<div class='outer-div' data-card-number='${index}'>
+           <div class='inner-div'> Guess
+           </div>
+            ${div.outerHTML}
+            </div>`).join('') + 
             `</div>`;
     }).join(''); // Join rows to return the full HTML string
 };
@@ -25,4 +30,7 @@ ${renderTable()}
 </div>`;
 
 const table = document.querySelector(".table");
+table.addEventListener("click", (event) => {
+    console.log(event.target, 'evnet');
+})
 console.log(table);
