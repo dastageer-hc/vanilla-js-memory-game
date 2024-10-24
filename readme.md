@@ -1,5 +1,11 @@
 # Memory Game
 
+After working with frameworks such as React for years, I wanted to revisit my core JavaScript skills. This memory game is one of the fun exercises I thought I could make.
+
+<img src="assets/images/image.png" alt="Memory Game Screenshot" height="250">
+
+[Play the Game](https://dastageer-hc.github.io/vanilla-js-memory-game/)
+
 ## Overview
 
 This is a simple memory game created using **vanilla JavaScript**. The goal of the game is to match pairs of cards within a grid layout. Each card is hidden initially, and players must flip them over to find matching pairs. This project is designed for fun and to deepen my understanding of JavaScript and DOM manipulation. **Note: This project is currently a work in progress.**
@@ -24,4 +30,4 @@ To run the memory game locally, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone <repository-url>
+   git clone git@github.com:dastageer-hc/vanilla-js-memory-game.git
