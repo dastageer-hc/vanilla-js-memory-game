@@ -1,18 +1,15 @@
-/* Basic styling */
 * {
   box-sizing: border-box;
-  /* Include padding and border in element's total width and height */
 }
 
 body {
-  font-family: Arial, sans-serif;
   font-family: "Dela Gothic One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
   background-color: #c3dee7;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
+  margin: 0;
 }
 
 #header {
@@ -21,13 +18,14 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 1rem;
 }
 
 #app {
   background-color: white;
   border-radius: 1rem;
-  min-width: 700px;
-  max-width: 450px;
+  max-width: 90vw;
+  width: 450px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   overflow: hidden;
 }
@@ -50,16 +48,17 @@ body {
 
 .table .row {
   display: flex;
-  width: "100%";
+  width: 100%;
   gap: 1rem;
   position: relative;
+  flex-wrap: wrap;
 }
 
-/* individual box container */
 .box-container {
-  width: 9rem;
-  height: 9rem;
-
+  width: 20%;
+  min-width: 80px;
+  height: 0;
+  padding-bottom: 20%;
   position: relative;
   overflow: visible;
   border-radius: 1rem;
@@ -96,7 +95,6 @@ body {
     -5px 8px 0px 0px rgb(149, 187, 236);
 }
 
-/* active class */
 .box-container.active .box-back {
   transform: rotateY(0);
 }
@@ -127,15 +125,15 @@ h2 {
 
 @keyframes border-shine {
   0% {
-    border-color: rgba(255, 215, 0, 0); 
-    box-shadow: 0 0 0 rgba(255, 215, 0, 0); 
+    border-color: rgba(255, 215, 0, 0);
+    box-shadow: 0 0 0 rgba(255, 215, 0, 0);
   }
   50% {
-    border-color: rgba(255, 215, 0, 1); 
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.5); 
+    border-color: rgba(255, 215, 0, 1);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.5);
   }
   100% {
-    border-color: rgba(255, 215, 0, 0); 
-    box-shadow: 0 0 0 rgba(255, 215, 0, 0); 
+    border-color: rgba(255, 215, 0, 0);
+    box-shadow: 0 0 0 rgba(255, 215, 0, 0);
   }
 }
