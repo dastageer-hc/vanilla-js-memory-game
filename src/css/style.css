@@ -149,6 +149,24 @@ h2 {
   }
 }
 
-.button {
-  all: unset;
+button {
+  height: 2rem;
+  border-radius: 0.3rem;
+  outline: none;
+  border: none;
+  width: 6rem;
+  background-color: rgb(220, 220, 255);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button:active {
+  height: 2rem;
+  border-radius: 0.3rem;
+  outline: none;
+  border: none;
+  width: 6rem;
+  background-color: rgb(65, 65, 85);
+  cursor: pointer;
+  color: white;
 }

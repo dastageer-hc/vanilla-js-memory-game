@@ -136,5 +136,4 @@ resetButton.addEventListener("click", (event) => {
     div.classList.remove("active", "match-animation");
     div.removeAttribute("data-matched");
   });
-  randomBoxNumbers= generateRandomBoxNumber(divArray);
 });
