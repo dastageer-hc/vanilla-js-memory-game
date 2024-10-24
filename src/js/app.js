@@ -30,7 +30,7 @@ const duplicateBoxNumber = [...randomSet].flatMap((element) => {
   return [element, element];
 });
 
-const randomBoxNumbers = generateRandomBoxNumber(duplicateBoxNumber);
+let randomBoxNumbers = generateRandomBoxNumber(duplicateBoxNumber);
 
 // Create a 4 by 4 grid
 let boxesArray = Array.from({ length: 4 }, (_, rowIndex) => {
@@ -118,7 +118,6 @@ function checkPair() {
 // attach event handler
 table.addEventListener("click", (event) => {
   if (event.target.parentNode.classList.contains("box-container")) {
-    console.log(event.target.parentNode.getAttribute("data-matched"), "target");
     if (!Number(event.target.parentNode.getAttribute("data-matched"))) {
       if (currentSelectedPair.length < 2) {
         currentSelectedPair.push(event.target);
@@ -126,4 +125,16 @@ table.addEventListener("click", (event) => {
     }
     checkPair();
   }
+});
+
+const resetButton = document.querySelector("#reset-btn");
+resetButton.addEventListener("click", (event) => {
+  score = 0;
+  scoreDiv.innerHTML = score;
+  const divArray = Array.from(document.querySelectorAll(".box-container"));
+  divArray.map((div) => {
+    div.classList.remove("active", "match-animation");
+    div.removeAttribute("data-matched");
+  });
+  randomBoxNumbers= generateRandomBoxNumber(divArray);
 });

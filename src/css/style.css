@@ -142,5 +142,13 @@ h2 {
   .box-container {
     width: 20%;
     min-width: 55px;
+    font-size: 0.3rem;
   }
+  .box {
+    font-size: 1.1rem;
+  }
+}
+
+.button {
+  all: unset;
 }
