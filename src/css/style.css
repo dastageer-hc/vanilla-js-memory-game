@@ -137,3 +137,10 @@ h2 {
     box-shadow: 0 0 0 rgba(255, 215, 0, 0);
   }
 }
+
+@media (max-width: 450px) {
+  .box-container {
+    width: 20%;
+    min-width: 55px;
+  }
+}
