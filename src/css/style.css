@@ -13,7 +13,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 #header {
@@ -21,6 +20,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 #app {
@@ -32,31 +32,15 @@ body {
   overflow: hidden;
 }
 
-#box-container {
+#boxes-container {
   border: 1px solid rgb(212, 205, 205);
   padding: 1rem;
-  margin: .5rem;
-  border-radius: .6rem;
+  margin: 0.5rem;
+  border-radius: 0.6rem;
   display: flex;
   align-items: center;
   justify-content: center;
-
-
 }
-
-.box {
-  will-change: transform;
-  position: absolute;
-  z-index: 0;
-}
-
-.box:hover {
-  background-color: rgb(167, 211, 211);
-  transform: rotateY(0);
-  transition: all .4s;
-}
-
-
 
 .table {
   flex-direction: column;
@@ -66,37 +50,92 @@ body {
 
 .table .row {
   display: flex;
-  width: '100%';
+  width: "100%";
   gap: 1rem;
   position: relative;
 }
 
-.outer-div {
+/* individual box container */
+.box-container {
   width: 9rem;
   height: 9rem;
+
+  position: relative;
+  overflow: visible;
+  border-radius: 1rem;
+}
+
+.box {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border: 1px solid gray;
   border-radius: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
-  position: relative;
-  overflow: hidden;
+  backface-visibility: hidden;
+  transition: transform 0.2s ease-in-out;
+  background-color: rgb(108, 119, 133);
+  color: white;
+  font-size: 2rem;
+  box-shadow: -27px -8px 35px -255px rgba(218, 102, 123, 1),
+    -5px 8px 0px 0px rgb(135, 140, 146);
+  z-index: 1;
 }
 
-/* .outer-div:hover .inner-div {
+.box-container .box-front {
+  transform: rotateY(0);
+  background-color: rgb(200, 240, 234);
+  color: rgb(102, 84, 84);
+}
+
+.box-container .box-back {
+  transform: rotateY(180deg);
+  box-shadow: -27px -8px 35px -255px rgba(218, 102, 123, 1),
+    -5px 8px 0px 0px rgb(149, 187, 236);
+}
+
+/* active class */
+.box-container.active .box-back {
   transform: rotateY(0);
 }
-
-.inner-div {
-
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: red;
-  z-index: 10;
+.box-container.active .box-front {
   transform: rotateY(180deg);
-  transition: all 1s;
-} */
+}
+
+h2 {
+  color: rgb(113, 105, 226);
+}
+
+.match-animation.box-container .box {
+  animation: matched 0.6s, border-shine 1s forwards;
+  background-color: rgb(108, 119, 133);
+}
+
+@keyframes matched {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes border-shine {
+  0% {
+    border-color: rgba(255, 215, 0, 0); 
+    box-shadow: 0 0 0 rgba(255, 215, 0, 0); 
+  }
+  50% {
+    border-color: rgba(255, 215, 0, 1); 
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.5); 
+  }
+  100% {
+    border-color: rgba(255, 215, 0, 0); 
+    box-shadow: 0 0 0 rgba(255, 215, 0, 0); 
+  }
+}
