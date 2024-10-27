@@ -127,13 +127,13 @@ table.addEventListener("click", (event) => {
   }
 });
 
-const resetButton = document.querySelector("#reset-btn");
-resetButton.addEventListener("click", (event) => {
-  score = 0;
-  scoreDiv.innerHTML = score;
-  const divArray = Array.from(document.querySelectorAll(".box-container"));
-  divArray.map((div) => {
-    div.classList.remove("active", "match-animation");
-    div.removeAttribute("data-matched");
-  });
-});
+// const resetButton = document.querySelector("#reset-btn");
+// resetButton.addEventListener("click", (event) => {
+//   score = 0;
+//   scoreDiv.innerHTML = score;
+//   const divArray = Array.from(document.querySelectorAll(".box-container"));
+//   divArray.map((div) => {
+//     div.classList.remove("active", "match-animation");
+//     div.removeAttribute("data-matched");
+//   });
+// });
